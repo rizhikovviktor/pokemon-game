@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import cn from 'classnames';
 
 import styles from "./style.module.css";
 import cardBackSide from "./assets/card-back-side.jpg";
@@ -11,15 +12,15 @@ const PokemonCard = ({id, name, img, type, values}) => {
 
     return (
         <div className={styles.root} onClick={onClick}>
-            <div className={`${styles.pokemonCard} ${isActive ? styles.active : ''}`}>
+            <div className={cn(styles.pokemonCard, {[styles.active]: isActive})}>
                 <div className={styles.cardFront}>
-                    <div className={`${styles.wrap} ${styles.front}`}>
+                    <div className={cn(styles.wrap, styles.front)}>
                         <div className={`${styles.pokemon} ${styles[type]}`}>
                             <div className={styles.values}>
-                                <div className={`${styles.count} ${styles.top}`}>{values.top}</div>
-                                <div className={`${styles.count} ${styles.right}`}>{values.right}</div>
-                                <div className={`${styles.count} ${styles.bottom}`}>{values.bottom}</div>
-                                <div className={`${styles.count} ${styles.left}`}>{values.bottom}</div>
+                                <div className={cn(styles.count, styles.top)}>{values.top}</div>
+                                <div className={cn(styles.count, styles.right)}>{values.right}</div>
+                                <div className={cn(styles.count, styles.bottom)}>{values.bottom}</div>
+                                <div className={cn(styles.count, styles.left)}>{values.bottom}</div>
                             </div>
                             <div className={styles.imgContainer}>
                                 <img src={img} alt={name}/>
@@ -34,7 +35,7 @@ const PokemonCard = ({id, name, img, type, values}) => {
                 </div>
 
                 <div className={styles.cardBack}>
-                    <div className={`${styles.wrap} ${styles.back}`}>
+                    <div className={cn(styles.wrap, styles.back)}>
                         <img src={cardBackSide} alt="Сard Backed"/>
                     </div>
                 </div>
