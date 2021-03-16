@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 
-const Layout = ({title = false, descr = false, urlBg = false, colorBg = false}) => {
+const Layout = ({title = false, urlBg = false, colorBg = false, children}) => {
     const style = {
         backgroundImage: urlBg ? 'url("' + urlBg + '")' : 'none',
         backgroundColor: colorBg ? colorBg : 'white'
@@ -17,8 +17,8 @@ const Layout = ({title = false, descr = false, urlBg = false, colorBg = false}) 
                         {title && (<h3>{title}</h3>)}
                         <span className={styles.separator}></span>
                     </div>
-                    <div className={[styles.desc, styles.full].join(' ')}>
-                        {descr && (<h3>{descr}</h3>)}
+                    <div className={`${styles.desc} ${styles.full}`}>
+                        {children}
                     </div>
                 </article>
             </div>
