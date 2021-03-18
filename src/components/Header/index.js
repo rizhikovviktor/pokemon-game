@@ -10,6 +10,8 @@ const Header = ({title, descr, onClickButton,children}) => {
             <MenuHeader />
             <header className={styles.root}>
                 <div className={styles.forest}></div>
+                <div className={styles.silhouette}></div>
+                <div className={styles.moon}></div>
                 <div className={styles.container}>
                     {title && (<h1>{title}</h1>)}
                     {descr && (<p>{descr}</p>)}
