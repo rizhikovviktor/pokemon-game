@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import styles from "./style.module.css";
 
 const Layout = ({title = false, urlBg = false, colorBg = false, children}) => {
@@ -17,7 +18,7 @@ const Layout = ({title = false, urlBg = false, colorBg = false, children}) => {
                         {title && (<h3>{title}</h3>)}
                         <span className={styles.separator}></span>
                     </div>
-                    <div className={`${styles.desc} ${styles.full}`}>
+                    <div className={cn(styles.desc, styles.full)}>
                         {children}
                     </div>
                 </article>
