@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import cn from "classnames";
 
 import styles from "./style.module.css";
 
-const NavBar = ({menuClick}) => {
-    const [isActive, setActive] = useState(false);
+const NavBar = ({menuClick, isMenuActive}) => {
     const onClick = () => {
-        setActive(!isActive);
-        menuClick && menuClick(!isActive);
+        menuClick && menuClick(!isMenuActive);
     }
 
     return (
@@ -16,7 +13,7 @@ const NavBar = ({menuClick}) => {
                 <p className={styles.brand}>
                     LOGO
                 </p>
-                <a onClick={onClick} className={cn(styles.menuButton, {[styles.active]: isActive})}>
+                <a onClick={onClick} className={cn(styles.menuButton, {[styles.active]: isMenuActive})}>
                     <span/>
                 </a>
             </div>

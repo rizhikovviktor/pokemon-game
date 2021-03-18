@@ -10,7 +10,7 @@ const MenuHeader = () => {
     return (
       <>
           <Menu isMenuActive={isActive}/>
-          <NavBar menuClick={handlerMenuClick} />
+          <NavBar menuClick={handlerMenuClick} isMenuActive={isActive} />
       </>
     );
 }
