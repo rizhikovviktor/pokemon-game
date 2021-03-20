@@ -6,14 +6,14 @@ import Layout from "../../components/Layout";
 import _ from 'lodash';
 
 const GamePage = () => {
-    const [pokemons, setActive] = useState(POKEMONS);
+    const [pokemons, setActive] = useState(_.cloneDeep(POKEMONS));
     const onClickBack = (id) => {
         setActive((pok_arr) => {
                 return pok_arr.map(itm => {
                     if (id === itm.id) {
                         itm.isActive = !itm.isActive;
                     }
-                    return _.cloneDeep(itm);
+                    return itm;
                 });
             }
         )
