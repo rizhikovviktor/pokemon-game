@@ -1,13 +1,6 @@
-import styles from "./style.module.css";
-
-import Header from "../../components/Header";
 import Layout from "../../components/Layout";
-import PokemonCard from "../../components/PokemonCard";
-import Footer from "../../components/Footer";
-
 import LayoutBg2 from "../../assets/bg2.jpg";
 import LayoutBg3 from "../../assets/bg3.jpg";
-import POKEMONS from "../../pokemons_data";
 
 const HomePage = ({onChangePage}) => {
     const handlerClickButton = (page) => {
@@ -16,12 +9,6 @@ const HomePage = ({onChangePage}) => {
 
     return (
         <>
-            <Header
-                title='This is title'
-                descr='This is Description!'
-                onClickButton = {handlerClickButton}
-            >
-            </Header>
             <Layout
                 title='This is Layout 1 title'
                 urlBg={LayoutBg3}
@@ -39,21 +26,11 @@ const HomePage = ({onChangePage}) => {
                     rank is higher, the opponent's card will be captured and changed into the player's color instead.
                 </p>
             </Layout>
-            <Layout
-                title='This is Layout 2 title'
-                colorBg='rgba(220, 204, 129, 0.52)'
-            >
-                <div className={styles.flex}>
-                    {
-                        POKEMONS.map(item  => <PokemonCard key={item.id} id={item.id} name={item.name} img={item.img} type={item.type} values={item.values} />)
-                    }
-                </div>
-            </Layout>
+
             <Layout
                 title='This is Layout 3 title'
                 urlBg={LayoutBg2}
             />
-            <Footer />
         </>
     );
 }
