@@ -6,27 +6,18 @@ import Layout from "../../components/Layout";
 import _ from 'lodash';
 
 const GamePage = () => {
-
-    const pokemons_default = _.cloneDeep(POKEMONS);
-
-    pokemons_default.map(itm => {
-        itm.isActive = false;
-        return itm
-    })
-
-    const [pokemons, setActive] = useState(pokemons_default);
-
+    const [pokemons, setActive] = useState(POKEMONS);
     const onClickBack = (id) => {
         setActive((pok_arr) => {
                 return pok_arr.map(itm => {
-                    if (id == itm.id) {
+                    if (id === itm.id) {
                         itm.isActive = !itm.isActive;
                     }
-                    return itm;
+                    return _.cloneDeep(itm);
                 });
             }
         )
-    }
+    };
 
     return (
         <Layout
