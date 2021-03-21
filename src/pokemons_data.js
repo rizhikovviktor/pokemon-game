@@ -18,7 +18,7 @@ const POKEMONS = [
             "name": "pidgeotto",
             "base_experience": 122,
             "height": 11,
-            "id": 17,
+            "id": 117,
             "values": {
                 "top": "A",
                 "right": 2,
@@ -45,7 +45,7 @@ const POKEMONS = [
             "name": "arbok",
             "base_experience": 157,
             "height": 35,
-            "id": 24,
+            "id": 124,
             "values": {
                 "top": 5,
                 "right": 9,
@@ -71,7 +71,7 @@ const POKEMONS = [
             "name": "pikachu",
             "base_experience": 112,
             "height": 4,
-            "id": 25,
+            "id": 125,
             "values": {
                 "top": 8,
                 "right": "A",
@@ -97,7 +97,7 @@ const POKEMONS = [
             "name": "bulbasaur",
             "base_experience": 64,
             "height": 7,
-            "id": 1,
+            "id": 101,
             "values": {
                 "top": 8,
                 "right": 4,
@@ -123,7 +123,7 @@ const POKEMONS = [
             "name": "charmander",
             "base_experience": 62,
             "height": 6,
-            "id": 4,
+            "id": 104,
             "values": {
                 "top": 7,
                 "right": 6,

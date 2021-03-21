@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 const NavBar = ({menuClick, isMenuActive, bgActive}) => {
     const onClick = () => {
         menuClick && menuClick(!isMenuActive);
-    }
+    };
 
     return (
         <nav className={cn (styles.root, ({[styles.bgActive]: bgActive}))}>
@@ -13,12 +13,12 @@ const NavBar = ({menuClick, isMenuActive, bgActive}) => {
                 <p className={styles.brand}>
                     LOGO
                 </p>
-                <a onClick={onClick} className={cn(styles.menuButton, {[styles.active]: isMenuActive})}>
+                <div onClick={onClick} className={cn(styles.menuButton, {[styles.active]: isMenuActive})}>
                     <span/>
-                </a>
+                </div>
             </div>
         </nav>
     );
-}
+};
 
 export default NavBar;

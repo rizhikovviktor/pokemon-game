@@ -2,11 +2,7 @@ import Layout from "../../components/Layout";
 import LayoutBg2 from "../../assets/bg2.jpg";
 import LayoutBg3 from "../../assets/bg3.jpg";
 
-const HomePage = ({onChangePage}) => {
-    const handlerClickButton = (page) => {
-        onChangePage && onChangePage(page);
-    }
-
+const HomePage = () => {
     return (
         <>
             <Layout
@@ -33,6 +29,6 @@ const HomePage = ({onChangePage}) => {
             />
         </>
     );
-}
+};
 
 export default HomePage;

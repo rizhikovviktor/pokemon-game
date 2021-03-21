@@ -1,4 +1,4 @@
-import { useRouteMatch, Route, Switch} from "react-router-dom";
+import { useRouteMatch, Route, Switch, Redirect} from "react-router-dom";
 import cn from 'classnames';
 
 import HomePage from "./routs/Home";
@@ -12,11 +12,12 @@ import Footer from "./components/Footer";
 
 import styles from "./style.module.css";
 
-
 const App = () => {
-    const match = useRouteMatch('/')
+    const match = useRouteMatch('/');
     return (
         <Switch>
+            <Route path="/404" render={NotFoundPage} />
+
             <Route>
                 <>
                     <MenuHeader bgActive={!match.isExact}/>
@@ -29,6 +30,9 @@ const App = () => {
                             <Route path="/game" component={GamePage}/>
                             <Route path="/about" render={AboutPage}/>
                             <Route path="/contact" render={ContactPage}/>
+                            <Route render={() => (
+                                <Redirect to="/404"/>
+                            )}/>
                         </Switch>
                     </div>
                     <Footer />
