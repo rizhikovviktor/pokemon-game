@@ -7,13 +7,12 @@ import localPokemons from "../../pokemons_data";
 
 const GamePage = () => {
     const [pokemons, setActive] = useState({});
-    const [cardsUpdated, setCardsUpdate] = useState(false);
 
     useEffect(() => {
         database.ref('pokemons').once('value', (snapshot) => {
             setActive(snapshot.val());
         });
-    }, [cardsUpdated]);
+    });
 
     const onClickCardTurn = (id) => {
         setActive(prevState => {
@@ -37,12 +36,13 @@ const GamePage = () => {
     };
 
     const onClickPokemonAdd = () => {
-        setCardsUpdate (prevState => {
-            const newKey = database.ref().child('pokemons').push().key;
-            database.ref('pokemons/' + newKey).set(localPokemons[localPokemons.length * Math.random() | 0]);
-
-            return !prevState;
-        });
+        const newKey = database.ref().child('pokemons').push().key;
+        const newPockemon = localPokemons[localPokemons.length * Math.random() | 0];
+        database.ref('pokemons/' + newKey)
+            .set(newPockemon)
+            .then(() => {
+                pokemons[newKey] = newPockemon;
+            });
     };
 
     return (
