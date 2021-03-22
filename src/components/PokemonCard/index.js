@@ -3,10 +3,10 @@ import cn from 'classnames';
 import styles from "./style.module.css";
 import cardBackSide from "./assets/card-back-side.jpg";
 
-const PokemonCard = ({id, name, img, type, values, isActive, onClickBack}) => {
+const PokemonCard = ({id, name, img, type, values, isActive, onClickCardTurn}) => {
     const handlerOnClick = () => {
-        onClickBack(id, !isActive);
-    }
+        onClickCardTurn(id, !isActive);
+    };
 
     return (
         <div className={styles.root} onClick={handlerOnClick}>
@@ -41,6 +41,6 @@ const PokemonCard = ({id, name, img, type, values, isActive, onClickBack}) => {
             </div>
         </div>
     )
-}
+};
 
 export default PokemonCard;
