@@ -9,13 +9,16 @@ import NotFoundPage from "./routs/NotFound";
 
 import MenuHeader from "./components/MenuHeader";
 import Footer from "./components/Footer";
+import {FireBaseContext} from "./context/firebaseContext";
+import Firebase from "./services/firebase";
 
 import styles from "./style.module.css";
 
 const App = () => {
     const match = useRouteMatch('/');
     return (
-        <Switch>
+        <FireBaseContext.Provider value={new Firebase()}>
+            <Switch>
             <Route path="/404" render={NotFoundPage} />
 
             <Route>
@@ -39,6 +42,7 @@ const App = () => {
                 </>
             </Route>
         </Switch>
+        </FireBaseContext.Provider>
     )
 };
 
