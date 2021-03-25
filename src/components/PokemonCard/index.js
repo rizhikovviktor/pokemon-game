@@ -2,9 +2,9 @@ import cn from 'classnames';
 import styles from "./style.module.css";
 
 
-const PokemonCard = ({id, name, img, type, values, isActive, minimize, className, onClickCardTurn, isSelected}) => {
+const PokemonCard = ({id, name, img, type, values, isActive, minimize, className, onClickCardTurn, isSelected, possession}) => {
     const handleOnClick = () => {
-        onClickCardTurn(id, !isActive);
+        onClickCardTurn && onClickCardTurn(id, !isActive);
     };
 
     return (
@@ -12,7 +12,7 @@ const PokemonCard = ({id, name, img, type, values, isActive, minimize, className
              className={cn(className, styles.pokemonCard, {[styles.active]: isActive, [styles.selected]: isSelected})}>
             <div className={styles.cardFront}>
                 <div className={cn(styles.wrap, styles.front)}>
-                    <div className={cn(styles.pokemon, styles[type])}>
+                    <div className={cn(styles.pokemon, styles[type], styles[possession])}>
                         <div className={styles.values}>
                             <div className={cn(styles.count, styles.top)}>{values.top}</div>
                             <div className={cn(styles.count, styles.right)}>{values.right}</div>
