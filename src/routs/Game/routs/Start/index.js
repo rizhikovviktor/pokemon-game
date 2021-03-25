@@ -47,7 +47,7 @@ const StartPage = () => {
             title='The Game!'
             colorBg='rgba(220, 204, 129, 0.52)'
         >
-            <div className={styles.flex}>
+            <div>
                 <button onClick={onClickGoToBoard} disabled={Object.keys(pokemonContext.pokemons).length < 5}>Go to board</button>
             </div>
             <div className={styles.flex}>
